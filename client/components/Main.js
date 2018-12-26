@@ -31,7 +31,6 @@ export default class App extends React.Component {
       <div className="main">
         <div className="header">
           <h4>FLUSH</h4>
-          <h6>.............</h6>
         </div>
         <Map />
       </div>
