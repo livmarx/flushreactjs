@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import axios from 'axios';
 
 class Map extends Component {
   constructor() {
@@ -15,6 +16,22 @@ class Map extends Component {
     this.mapMoved = this.mapMoved.bind(this);
     this.mapLoaded = this.mapLoaded.bind(this);
     this.zoomChanged = this.zoomChanged.bind(this);
+  }
+
+  async componentDidMount() {
+    let mapCenterCoords = {};
+    if (this.state.map) {
+      mapCenterCoords = this.state.map.getCenter();
+    } else {
+      mapCenterCoords = { lat: 40.756795, lng: -73.954298 };
+    }
+    const res = await axios.get(
+      `https://www.refugerestrooms.org/api/v1/restrooms/by_location.json?lat=${
+        mapCenterCoords.lat
+      }&lng=${mapCenterCoords.lat}`
+    );
+    const bathrooms = res.data;
+    console.log('bathrooms:', bathrooms);
   }
 
   mapMoved() {
