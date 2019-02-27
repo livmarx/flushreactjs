@@ -30,16 +30,20 @@ export default class App extends React.Component {
     return (
       <div className="main">
         <div className="header">
-          <BurgerMenu />
           <h4>FLUSH</h4>
-          <h3> (know where to go)</h3>
+          <h3> know where to go </h3>
+          <div className="burger-menu-div">
+            <BurgerMenu />
+          </div>
         </div>
+        <div className="botton-of-menu" />
         <Map
           center={{ lat: 40.756795, lng: -73.954298 }}
           zoom={14}
           containerElement={<div style={{ height: `100vh`, width: '100vw' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
+        <div className="botton-of-menu" />
         <h5>Powered by Google Maps</h5>
       </div>
     );
