@@ -1,5 +1,5 @@
 {
-  "name": "taboola",
+  "name": "newflush",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -26,7 +26,8 @@
     "google-map-react": "^1.1.2",
     "morgan": "^1.9.1",
     "path": "^0.12.7",
-    "pg": "^7.4.3",
+    "pg": "^7.8.1",
+    "pg-hstore": "^2.3.2",
     "react": "^16.5.2",
     "react-burger-menu": "^2.5.4",
     "react-dom": "^16.5.2",
@@ -37,7 +38,7 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
-    "sequelize": "^4.39.0",
+    "sequelize": "^4.42.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   }

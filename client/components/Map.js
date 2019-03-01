@@ -66,7 +66,8 @@ class Map extends Component {
               <Marker
                 {...marker}
                 key={i}
-                // onRightClick={() => props.onMaerkerRightClick(index)}
+                position={marker.position}
+                onClick={() => props.onMarkerClick(marker)}
               />
             );
           })}
@@ -77,39 +78,3 @@ class Map extends Component {
 }
 
 export default withGoogleMap(Map);
-
-// const MyMapComponent = withGoogleMap(props => (
-//   <GoogleMap
-//     ref={props.onMapLoad}
-//     defaultZoom={8}
-//     defaultCenter={{ lat: -34.397, lng: 150.644 }}
-//     onClick={props.onMapClick}
-//   >
-//     {props.markers.map((marker, index) => {
-//       return <Marker onRightClick={() => props.onMaerkerRightClick(index)} />;
-//     })}
-//   </GoogleMap>
-// ));
-
-//------------------------------------------------
-// class Map extends Component {
-//   render() {
-//     const GoogleMapExample = withGoogleMap(props => (
-//       <GoogleMap
-//         defaultCenter={{ lat: 40.756795, lng: -73.954298 }}
-//         defaultZoom={11}
-//       />
-//     ));
-//     return (
-//       <div className="map">
-//         <GoogleMapExample
-//           containerElement={<div style={{ height: `100vh`, width: '100vw' }} />}
-//           mapElement={<div style={{ height: `100%` }} />}
-//         />
-//       </div>
-//     );
-//   }
-// }
-// export default Map;
-
-//------------------------------------------------------------
