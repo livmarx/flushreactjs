@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Toilet, User, Review } = require('../db/index');
 
-// Get all toilets
+// Get all toilets:
 router.get('/', async function(req, res, next) {
   console.log('in get all toilets');
   try {
@@ -13,7 +13,7 @@ router.get('/', async function(req, res, next) {
   }
 });
 
-// Get particular toilet
+// Get particular toilet:
 router.get('/:toiletId', async function(req, res, next) {
   try {
     const id = req.params.toiletId;
