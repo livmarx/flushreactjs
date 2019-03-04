@@ -8,16 +8,16 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      events: [],
+      toiletLocations: [],
     };
     // this.redirect = this.redirect.bind();
   }
 
-  async componentDidMount() {
-    // const res = await axios.get();
-    // const allEvents = res.data.list;
-    // this.setState({ events: allEvents });
-  }
+  // async componentDidMount() {
+  //   const res = await axios.get();
+  //   const allEvents = res.data.list;
+  //   this.setState({ events: allEvents });
+  // }
 
   // redirect(url) {
   //   console.log('url: ', url);
