@@ -3,6 +3,8 @@ const app = express(); // object with methods; One method is router; express cre
 const morgan = require('morgan'); //app.use(...) morgan says console.log(wht app.use does);
 const { db, Review, Toilet, User } = require('./server/db/index');
 
+const routes = require('./server/api/index');
+
 // Logger:
 app.use(morgan('dev')); // implies '/' ('/', morgan('dev'));
 
@@ -14,7 +16,7 @@ app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 
 // Backend Routing:
-app.use('/api', require('./server/api/index'));
+app.use('/api', routes);
 
 // Setting up server
 const PORT = process.env.PORT || 8880;
@@ -35,3 +37,4 @@ async function bootApp() {
 }
 
 bootApp();
+module.exports = app;
