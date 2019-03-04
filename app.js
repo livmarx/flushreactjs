@@ -1,10 +1,9 @@
-const db = require('./server/db');
+const { db } = require('./server/db/index');
 const express = require('express');
 const path = require('path');
 const app = express(); // object with methods; One method is router; express creates a server; app allows us to access the server; app.listen hooks up our server;
 
-const morgan = require('morgan'); //app.use(...) morgan says console.log(what app.use does);
-// const { db, List, ToDo, User } = require('./backend/db/index');
+const morgan = require('morgan'); //app.use(...) morgan says console.log(wht app.use does);
 
 // Logger:
 app.use(morgan('dev')); // implies '/' ('/', morgan('dev'));
@@ -19,8 +18,9 @@ app.use(express.static(__dirname + '/public'));
 
 const PORT = process.env.PORT || 8880;
 
-const init = async function() {
-  // await db.sync();
+const syncDb = () => db.sync();
+
+const startListening = () => {
   app.listen(PORT, function() {
     console.log(
       ` ***** I'm leisurely listening on pleasent port of ${PORT} *****`
@@ -28,4 +28,9 @@ const init = async function() {
   });
 };
 
-init();
+async function bootApp() {
+  await syncDb();
+  await startListening();
+}
+
+bootApp();

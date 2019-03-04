@@ -1,4 +1,5 @@
 'use strict';
+
 const db = require('./db');
 const Toilet = require('./toiletModel');
 const User = require('./userModel');

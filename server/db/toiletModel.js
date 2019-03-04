@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('./db');
 
-const Toilet = db.define('page', {
+const Toilet = db.define('toilet', {
   name: { type: Sequelize.STRING },
   type: {
     type: Sequelize.STRING,

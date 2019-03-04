@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const db = require('./db');
 
-const Review = db.define('page', {
+const Review = db.define('review', {
   rating: {
     type: Sequelize.INTEGER,
     allowNull: true,
